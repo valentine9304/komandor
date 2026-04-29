@@ -159,12 +159,13 @@ SPECTACULAR_SETTINGS = {
     "VERSION": "1.0.0",
 }
 
+STATIC_URL = "static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = "/api/docs/"
 ACCOUNT_LOGOUT_REDIRECT_URL = "/api/docs/"
-
-REST_USE_JWT = False
 
 ACCOUNT_EMAIL_VERIFICATION = "none"
 ACCOUNT_LOGIN_METHODS = {"username", "email"}
