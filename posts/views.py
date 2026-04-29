@@ -46,6 +46,7 @@ from posts.serializers import PostSerializer
             "Переключает лайк текущего пользователя для выбранного поста. "
             "Если лайк уже был поставлен, он будет удален."
         ),
+        request=None,
         responses={
             200: OpenApiResponse(description="Лайк удален"),
             201: OpenApiResponse(description="Лайк поставлен"),
