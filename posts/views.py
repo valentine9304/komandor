@@ -5,6 +5,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 
 from posts.models import Like, Post
+from posts.filters import PostFilter
 from posts.permissions import IsAuthorOrReadOnly
 from posts.serializers import PostSerializer
 
@@ -54,7 +55,7 @@ from posts.serializers import PostSerializer
 class PostViewSet(viewsets.ModelViewSet):
     serializer_class = PostSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsAuthorOrReadOnly)
-    filterset_fields = ("author", "created_at")
+    filterset_class = PostFilter
     ordering_fields = ("created_at", "likes_count", "title")
     ordering = ("-created_at",)
 
